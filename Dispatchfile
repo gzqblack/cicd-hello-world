@@ -64,7 +64,7 @@ task "deploy": {
 
 actions: [
   {
-    tasks: ["build", "deploy"]
+    tasks: ["deploy"]
     on push: {
       branches: ["master"]
     }
@@ -74,11 +74,11 @@ actions: [
     on pull_request: {
       chatops: ["build"]
     }
+  },
+  {
+    tasks: ["build"]
+    on tag: {
+      names: ["*"]
+    }
   }
-#  {
-#    tasks: ["build"]
-#    on tag: {
-#      names: ["*"]
-#    }
-#  }
 ]
