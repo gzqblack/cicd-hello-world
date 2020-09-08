@@ -62,7 +62,14 @@ task "deploy": {
   ]
 }
 
+
   actions: [
+  {
+    tasks: ["deploy"]
+    on push: {
+      branches: ["master"]
+    }
+  },
   {
     tasks: ["build"]
     on pull_request: {
@@ -76,4 +83,3 @@ task "deploy": {
     }
   }
 ]
-
