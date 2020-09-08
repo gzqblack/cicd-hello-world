@@ -64,15 +64,9 @@ task "deploy": {
 
   actions: [
   {
-    tasks: ["deploy"]
+    tasks: ["build","deploy"]
     on push: {
       branches: ["master"]
-    }
-  },
-  {
-    tasks: ["build"]
-    on pull_request: {
-      chatops: ["build"]
     }
   },
   {
