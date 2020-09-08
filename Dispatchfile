@@ -71,12 +71,6 @@ task "deploy": {
   },
   {
     tasks: ["build"]
-    on pull_request: {
-      chatops: ["build"]
-    }
-  },
-  {
-    tasks: ["build"]
     on tag: {
       names: ["*"]
     }
